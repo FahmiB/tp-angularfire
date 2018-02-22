@@ -10,12 +10,14 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class AppComponent implements OnInit {
 
   description: Observable<any>;
+  messages: Observable<any[]>;
 
   constructor(private db:AngularFireDatabase) {
     this.description = db.object ('description').valueChanges();
+    this.messages = db.list('messages').valueChanges();
   }
 
   ngOnInit() {
-    
+
   }
 }

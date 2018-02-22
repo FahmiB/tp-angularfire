@@ -3,4 +3,10 @@
   <h1>
     {{ description | async }}
   </h1>
+<br>liste des messages:<br>
+  <ul>
+    <li *ngFor="let message of messages | async">
+       {{ message | json }}
+    </li>
+  </ul>
   
